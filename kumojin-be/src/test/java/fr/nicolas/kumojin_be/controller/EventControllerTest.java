@@ -84,7 +84,7 @@ public class EventControllerTest {
 
         when(eventService.getEvents()).thenReturn(expectedEvents);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/events/"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/events"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$").isArray())

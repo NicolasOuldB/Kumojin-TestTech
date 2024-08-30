@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/events")
+@CrossOrigin(origins = "http://localhost:5173")
 public class EventController {
 
     @Autowired
@@ -19,7 +20,7 @@ public class EventController {
         return eventService.getEventById(id);
     }
 
-    @GetMapping("/")
+    @GetMapping
     private List<EventDto> getEvents() {
         return eventService.getEvents();
     }
